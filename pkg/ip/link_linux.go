@@ -93,7 +93,7 @@ func makeVeth(name, vethPeerName string, mtu int, mac string, hostNS ns.NetNS) (
 			return
 
 		default:
-			err = fmt.Errorf("failed to make veth pair: %v", err)
+			err = fmt.Errorf("failed to make veth pair: %v (name: %v, vethPeerName: %v, mtu: %v, mac: %v, hostNS: %v)", err, name, vethPeerName, mtu, mac, hostNS)
 			return
 		}
 	}
